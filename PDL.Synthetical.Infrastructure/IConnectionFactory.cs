@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PDL.Synthetical.Infrastructure
 {
-    public interface IConnectionFactory : IDisposable
+    public interface IConnectionFactory : IBaseConnectionFactory
     {
         IDbConnection GetConnection { get; set; }
     }
