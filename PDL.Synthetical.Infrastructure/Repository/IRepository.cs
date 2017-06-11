@@ -19,7 +19,7 @@ namespace PDL.Synthetical.Infrastructure.Repository
         /// Update entity
         /// </summary>
         /// <param name="entity"></param>
-        void Updadte(T entity);
+        void Update(T entity);
         /// <summary>
         /// Delete entity
         /// </summary>

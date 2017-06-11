@@ -42,29 +42,34 @@ namespace PDL.Synthetical.Infrastructure.Repository
             dbConnection.Delete(entity);
         }
 
-        public virtual T GetById(long id)
+        public async Task<T> GetByIdAsync(string Id)
         {
-            return dbConnection.Get<T>(id);
+            return await dbConnection.GetAsync<T>(Id);
         }
 
-        public virtual T GetById(int id)
+        public virtual T GetById(long Id)
         {
-            return dbConnection.Get<T>(id);
+            return dbConnection.Get<T>(Id);
         }
 
-        public virtual T GetById(string id)
+        public virtual T GetById(int Id)
         {
-            return dbConnection.Get<T>(id);
+            return dbConnection.Get<T>(Id);
         }
 
-        public virtual async Task<T> GetByIdAsync(long id)
+        public virtual T GetById(string Id)
         {
-            return await dbConnection.GetAsync<T>(id);
+            return dbConnection.Get<T>(Id);
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(long Id)
         {
-            return await dbConnection.GetAsync<T>(id);
+            return await dbConnection.GetAsync<T>(Id);
+        }
+
+        public virtual async Task<T> GetByIdAsync(int Id)
+        {
+            return await dbConnection.GetAsync<T>(Id);
         }
 
         public virtual IEnumerable<T> GetAll()
@@ -108,7 +113,7 @@ namespace PDL.Synthetical.Infrastructure.Repository
             }
             isSuccess = true;
             return isSuccess;
-        }
+        }    
 
     }
 }

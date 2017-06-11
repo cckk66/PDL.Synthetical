@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUserInfoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PDL.Synthetical.Domain\PDL.Synthetical.Domain.csproj">
+      <Project>{22919D78-58E4-4B41-B3F7-B03EE9D1BBB9}</Project>
+      <Name>PDL.Synthetical.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PDL.Synthetical.Infrastructure\PDL.Synthetical.Infrastructure.csproj">
+      <Project>{4BBD28EC-FC63-4F22-99AD-97EE206D1ABE}</Project>
+      <Name>PDL.Synthetical.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
