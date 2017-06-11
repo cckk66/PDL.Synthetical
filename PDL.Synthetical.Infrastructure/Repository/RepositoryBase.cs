@@ -24,27 +24,27 @@ namespace PDL.Synthetical.Infrastructure.Repository
 
         protected IDbConnection DbConnection
         {
-            get { return dbConnection ?? (dbConnection = ConnectionFactory.GetConnection); }
+            get { return dbConnection ?? (dbConnection = ConnectionFactory.DbConnection); }
         }
 
         public virtual void Add(T entity)
         {
-            dbConnection.Insert(entity);
+            DbConnection.Insert(entity);
         }
 
         public virtual void Update(T entity)
         {
-            dbConnection.Update(entity);
+            DbConnection.Update(entity);
         }
 
         public virtual void Delete(T entity)
         {
-            dbConnection.Delete(entity);
+            DbConnection.Delete(entity);
         }
 
         public async Task<T> GetByIdAsync(string Id)
         {
-            return await dbConnection.GetAsync<T>(Id);
+            return await DbConnection.GetAsync<T>(Id);
         }
 
         public virtual T GetById(long Id)

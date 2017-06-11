@@ -19,13 +19,14 @@ namespace PDL.Synthetical.Api
         }
 
         private static void SetAutofacContainer()
+
         {
             var builder = new ContainerBuilder();
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             //builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerLifetimeScope();
-            builder.RegisterType<BaseConnectionFactory>().As<IConnectionFactory>().InstancePerLifetimeScope();
-            builder.RegisterType<BaseConnectionFactory>().As<IBaseConnectionFactory>().InstancePerLifetimeScope();
+            builder.RegisterType<ConnectionFactory>().As<IConnectionFactory>().InstancePerLifetimeScope();
+            //builder.RegisterType<BaseConnectionFactory>().As<IBaseConnectionFactory>().InstancePerLifetimeScope();
             builder.RegisterAssemblyTypes(typeof(IUserInfoRepository).Assembly)
             .Where(t => t.Name.EndsWith("Repository"))
             .AsImplementedInterfaces().InstancePerLifetimeScope();
