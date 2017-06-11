@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PDL.Synthetical.Domain;
 using PDL.Synthetical.Repositories;
-using PDL.Synthetical.Infrastructure;
-                      
+
 namespace PDL.Synthetical.Services
 {
     public class UserInfoService : IUserInfoService

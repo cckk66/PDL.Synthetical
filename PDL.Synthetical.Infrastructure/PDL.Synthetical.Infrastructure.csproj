@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseConnectionFactory.cs" />
+    <Compile Include="ConnectionFactory.cs" />
     <Compile Include="IBaseConnectionFactory.cs" />
     <Compile Include="IConnectionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

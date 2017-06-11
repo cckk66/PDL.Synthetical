@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Routing;
+﻿using System.Web.Http;
 
 namespace PDL.Synthetical.Api
 {
@@ -11,7 +6,9 @@ namespace PDL.Synthetical.Api
     {
         protected void Application_Start()
         {
+            Bootstrapper.Run();
             GlobalConfiguration.Configure(WebApiConfig.Register);
+          
         }
     }
 }
