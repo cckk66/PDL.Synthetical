@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DapperExtensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,78 +10,98 @@ namespace PDL.Synthetical.Infrastructure.Repository
 {
     public interface IRepository<T> where T : class
     {
+        /// <summary>
+        /// Add entity
+        /// </summary>
+        /// <param name="entity"></param>
         void Add(T entity);
-        void Update(T entity);
+        /// <summary>
+        /// Update entity
+        /// </summary>
+        /// <param name="entity"></param>
+        void Updadte(T entity);
+        /// <summary>
+        /// Delete entity
+        /// </summary>
+        /// <param name="entity"></param>
         void Delete(T entity);
-        void Delete(Expression<Func<T, bool>> where);
-        T GetById(long id);
-        T GetById(int id);
-        T GetById(string id);
-        T Get(Expression<Func<T, bool>> where);
+        /// <summary>
+        /// Get eintiy by long id.
+        /// </summary>
+        /// <param name="Id">ID</param>
+        /// <returns></returns>
+        T GetById(long Id);
+        /// <summary>
+        /// Get entity by int id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        T GetById(int Id);
+        /// <summary>
+        /// Get entity by string id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        T GetById(string Id);
+        /// <summary>
+        /// Get async entity by long id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(long Id);
+        /// <summary>
+        /// Get async enity by int id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(int Id);
+        /// <summary>
+        /// Get async entity by string id.
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(string Id);
+        /// <summary>
+        /// Get all entity.
+        /// </summary>
+        /// <returns></returns>
         IEnumerable<T> GetAll();
+        /// <summary>
+        /// Get async all entity.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<T>> GetAllAsync();
+        /// <summary>
+        /// Get list entity by experesson.
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
         IEnumerable<T> GetMany(Expression<Func<T, bool>> where);
-        //IPagedList<T> GetPage<TOrder>(Page page, Expression<Func<T, bool>> where, Expression<Func<T, TOrder>> order);
 
-        Task<T> GetByIdAsync(long id);
-        Task<T> GetByIdAsync(int id);
+        /// <summary>
+        /// Get async list entity by expression
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
         Task<IEnumerable<T>> GetManyAsync(Expression<Func<T, bool>> where);
 
-        #region Add By Isaac
+        /// <summary>
+        /// Get page list entity.
+        /// </summary>
+        /// <param name="pageIndex">pageIndex</param>
+        /// <param name="pageSize">pageSize</param>
+        /// <param name="rowsCount">rowsCount</param>
+        /// <param name="predicate">predicate</param>
+        /// <param name="sort">sort</param>
+        /// <param name="buffer">buffer</param>
+        /// <returns></returns>
+        IEnumerable<T> GetPageList(int pageIndex, int pageSize, out long rowsCount, object predicate = null, IList<ISort> sort = null, bool buffer = true);
 
         /// <summary>
-        /// 无状态查询
+        /// batch insert list entity.
         /// </summary>
-        /// <param name="exp">表达式</param>
+        /// <param name="entityList">list entity</param>
         /// <returns></returns>
-        IQueryable<T> FindAllNoTracking(Expression<Func<T, bool>> exp);
-        /// <summary>
-        /// 无状态查询
-        /// </summary>
-        /// <returns></returns>
-        IQueryable<T> FindAllNoTracking();
-        /// <summary>
-        /// 查找所有数据信息
-        /// </summary>
-        /// <returns></returns>
-        IQueryable<T> FindAll();
-        /// <summary>
-        /// 执行SQL语句。
-        /// </summary>
-        /// <param name="sql">sql语句</param>
-        /// <param name="prm">参数集合</param>
-        /// <returns></returns>
-        IEnumerable<T> ExcuteSql(string sql, params KeyValuePair<string, object>[] prm);
-        /// <summary>
-        /// 执行SQL语句。返回指定类型
-        /// </summary>
-        /// <typeparam name="P">返回类型</typeparam>
-        /// <param name="sql">执行的SQL语句</param>
-        /// <param name="prm">参数</param>
-        /// <returns>返回数据。</returns>
-        IEnumerable<P> ExcuteSql<P>(string sql, params KeyValuePair<string, object>[] prm) where P : class, new();
-
-        /// <summary>
-        /// 得到分页数据信息
-        /// </summary>
-        /// <param name="predicate">查询条件</param>
-        /// <param name="sortPredicate">排序字段</param>
-        /// <param name="sortOrder">排序方式</param>
-        /// <param name="pageNumber">当前页码</param>
-        /// <param name="pageSize">页容量</param>
-        /// <returns>分页数据结果</returns>
-        //PagedResult<T> GetAll(Expression<Func<T, bool>> predicate, Expression<Func<T, dynamic>> sortPredicate, string order, int pageNumber, int pageSize);
-
-        /// <summary>
-        /// 获取分页数据信息
-        /// </summary>
-        /// <param name="predicate">查询条件</param>
-        /// <param name="pagination">分页信息</param>
-        /// <returns></returns>
-        //PagedResult<T> GetAll(Expression<Func<T, bool>> predicate, Pagination pagination);
-
-        //Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate, Pagination pagination);
-        Task<IEnumerable<T>> GetAllAsync();
-        void AddCommandTimeout(int timeout = 120);
-        #endregion
+        bool AddBatch(IEnumerable<T> entityList);
     }
 }
