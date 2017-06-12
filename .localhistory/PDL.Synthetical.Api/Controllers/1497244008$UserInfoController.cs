@@ -40,9 +40,9 @@ namespace PDL.Synthetical.Api.Controllers
             userInfoService.Update(entity);
             return Ok();
         }
-        [Route("api/updateuserinfo1")]
+        [Route("api/updateuserinfo")]
         [HttpPost]
-        public IHttpActionResult Update1(UserInfo entity)
+        public IHttpActionResult Update(UserInfo entity)
         {
             userInfoService.Update(entity);
             return Ok();
