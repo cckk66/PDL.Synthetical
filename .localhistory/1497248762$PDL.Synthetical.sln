@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDL.Synthetical.Services", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDL.Synthetical.TokenManager", "PDL.Synthetical.TokenManager\PDL.Synthetical.TokenManager.csproj", "{174F1E55-72CF-4F80-AA2A-C9E2825B2EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDL.Synthetical.Common", "PDL.Synthetical.Common\PDL.Synthetical.Common.csproj", "{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{174F1E55-72CF-4F80-AA2A-C9E2825B2EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{174F1E55-72CF-4F80-AA2A-C9E2825B2EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{174F1E55-72CF-4F80-AA2A-C9E2825B2EF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

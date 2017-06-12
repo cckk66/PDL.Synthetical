@@ -44,6 +44,7 @@ namespace PDL.Synthetical.Api.Controllers
         [HttpPost]
         public IHttpActionResult test(UserInfo entity)
         {
+            userInfoService.Update(entity);
             return Ok();
         }
     }

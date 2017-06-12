@@ -165,11 +165,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="Attributes\RESTAuthorizeAttribute.cs" />
-    <Compile Include="Controllers\AuthorizeController.cs" />
-    <Compile Include="Controllers\BaseApiController.cs" />
-    <Compile Include="Controllers\BasicData\BasicDataController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\NoAuthorizeController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,10 +188,6 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PDL.Synthetical.Common\PDL.Synthetical.Common.csproj">
-      <Project>{3C8344A4-4C7C-4BC5-BC2A-EF0078EA1AA3}</Project>
-      <Name>PDL.Synthetical.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PDL.Synthetical.Domain\PDL.Synthetical.Domain.csproj">
       <Project>{22919D78-58E4-4B41-B3F7-B03EE9D1BBB9}</Project>
       <Name>PDL.Synthetical.Domain</Name>
@@ -212,10 +203,6 @@
     <ProjectReference Include="..\PDL.Synthetical.Services\PDL.Synthetical.Services.csproj">
       <Project>{79E86C0A-0C4A-4A0A-A37E-68A15743D72A}</Project>
       <Name>PDL.Synthetical.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PDL.Synthetical.TokenManager\PDL.Synthetical.TokenManager.csproj">
-      <Project>{174f1e55-72cf-4f80-aa2a-c9e2825b2ef4}</Project>
-      <Name>PDL.Synthetical.TokenManager</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
